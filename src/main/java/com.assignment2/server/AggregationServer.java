@@ -41,6 +41,21 @@ public class AggregationServer {
 
     public static void clientServiceHandler(Socket clientSocket){
         // handle get and put request here
+
+        System.out.println(clientSocket);
+
+        // for get
+
+
+        //for put
+
     }
 
+    public static void getImpl(){
+
+    }
+
+    public static void putImpl(){
+
+    }
 }
