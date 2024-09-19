@@ -1,0 +1,70 @@
+# Ignore build directories
+/build/
+/bin/
+/out/
+
+# Ignore Maven/Gradle wrapper files
+.mvn/
+.gradle/
+target/
+
+# Ignore IntelliJ IDEA or Eclipse project files
+/.idea/
+/*.iml
+/.classpath
+/.project
+/.settings/
+/.settings/
+
+# Ignore temporary files
+*.class
+*.log
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+
+# Ignore operating system-specific files
+Thumbs.db
+.DS_Store
+
+# Ignore package-specific files
+node_modules/
+package-lock.json
+npm-debug.log
+
+# Ignore generated files
+*.jar
+*.war
+*.ear
+
+# Ignore other generated files or artifacts
+*.log
+*.tmp
+*.bak
+
+# Ignore logs and runtime files
+/logs/
+*.log
+
+# Ignore credentials or sensitive data
+*.env
+*.key
+*.cert
+
+# Ignore specific IDE config files (if using)
+.vscode/
+.idea/
+
+# Ignore compiled Lamport clock data or JSON that could be regenerated
+*.json
+
+# Ignore libraries or dependencies, if included locally
+lib/
+
+# Include all source files
+!src/**
+
+# Include specific files that shouldn't be ignored
+!.gitignore
+!.mvn/wrapper/maven-wrapper.properties
