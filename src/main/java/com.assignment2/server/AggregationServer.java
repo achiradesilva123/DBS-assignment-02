@@ -44,22 +44,44 @@ public class AggregationServer {
     }
 
     public static void clientServiceHandler(Socket clientSocket) throws IOException{
-        // handle get and put request here
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 
         String requestLine = in.readLine();
-        if (requestLine.startsWith("GET")) {
+        System.out.println("Request Line: " + requestLine);
+
+        if (requestLine == null || requestLine.trim().isEmpty()) {
+            System.out.println("Invalid or empty request line");
+            out.println("HTTP/1.1 400 Bad Request");
+            out.println();
+            return;
+        }
+
+        String line;
+        int contentLength = 0;
+        while ((line = in.readLine()) != null && !line.isEmpty()) {
+            System.out.println("Received line: " + line);
+            if (line.startsWith("Content-Length:")) {
+                contentLength = Integer.parseInt(line.split(": ")[1]);
+            }
+        }
+
+        if (requestLine.startsWith("PUT")) {
+            char[] body = new char[contentLength];
+            in.read(body, 0, contentLength);
+            String requestBody = new String(body);
+
+            System.out.println("Received Body: " + requestBody);
+
+            putImpl(requestBody, out);
+        } else if (requestLine.startsWith("GET")) {
             getImpl(out);
-        } else if (requestLine.startsWith("PUT")) {
-            putImpl(in, out);
         } else {
-            out.println("HTTP Request : {}, 400 Bad Request");
+            out.println("HTTP/1.1 400 Bad Request");
         }
 
         in.close();
         out.close();
-
     }
 
     public static void getImpl(PrintWriter out) throws IOException {
@@ -86,18 +108,18 @@ public class AggregationServer {
 
     }
 
-    public static void putImpl(BufferedReader in, PrintWriter out) throws IOException {
+    public static void putImpl(String body, PrintWriter out) throws IOException {
 
         lamportClock.increment();
 
-        StringBuilder body = new StringBuilder();
-        String line;
-        while (!(line = in.readLine()).isEmpty()) {
-            body.append(line);
-        }
+//        StringBuilder body = new StringBuilder();
+//        String line;
+//        while (!(line = in.readLine()).isEmpty()) {
+//            body.append(line);
+//        }
 
         FileWriter file = new FileWriter("weather.json");
-        file.write(body.toString());
+        file.write(body);
         file.flush();
         file.close();
         out.println("HTTP PUT : {}, 200 OK");
