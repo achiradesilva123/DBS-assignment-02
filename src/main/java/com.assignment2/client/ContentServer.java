@@ -19,16 +19,35 @@ public class ContentServer {
         return json;
     }
     public static void main(String[] args) {
-        String server = "localhost";
-        int port = 8888;
+
+        if (args.length < 2) {
+            System.out.println("Usage: java ContentServer <server> <port>");
+            return;
+        }
+
+        String server = args[0];
+        int port = Integer.parseInt(args[1]);
+        String data = "weather.json";
+
 
         try (Socket socket = new Socket(server, port);
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-            out.println("PUT Request /weather.json");
-            out.println("Host: " + server);
-            out.println();
+            InputStream is = ContentServer.class.getClassLoader().getResourceAsStream(data);
+
+            if (is == null) {
+                System.out.println("File not found: " + data);
+                return;
+            }
+
+             JSONObject jsonData = readDataFile(data);
+             out.println("PUT /weather.json HTTP/1.1");
+             out.println("Host: " + server);
+             out.println("Content-Type: application/json");
+             out.println("Content-Length: " + jsonData.toString().length());
+             out.println();
+             out.println(jsonData.toString());
 
             String responseLine;
             while ((responseLine = in.readLine()) != null) {
@@ -38,6 +57,5 @@ public class ContentServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

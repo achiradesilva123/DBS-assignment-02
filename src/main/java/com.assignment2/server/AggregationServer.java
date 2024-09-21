@@ -66,7 +66,7 @@ public class AggregationServer {
 
         lamportClock.increment();
 
-        File file = new File("weather_data.json");
+        File file = new File("weather.json");
         if (file.exists()) {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             StringBuilder data = new StringBuilder();
@@ -96,7 +96,7 @@ public class AggregationServer {
             body.append(line);
         }
 
-        FileWriter file = new FileWriter("weather_data.json");
+        FileWriter file = new FileWriter("weather.json");
         file.write(body.toString());
         file.flush();
         file.close();
