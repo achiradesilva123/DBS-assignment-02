@@ -15,4 +15,7 @@ public class LamportClock {
     public void setClock(int clock) {
         this.clock = clock;
     }
+    public void increment() {
+        clock++;
+    }
 }
