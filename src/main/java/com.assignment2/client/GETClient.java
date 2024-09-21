@@ -16,7 +16,7 @@ public class GETClient {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-            out.println("GET /weather.json HTTP/1.1");
+            out.println("GET Request /weather.json");
             out.println("Host: " + server);
             out.println();
 
@@ -28,5 +28,6 @@ public class GETClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }
