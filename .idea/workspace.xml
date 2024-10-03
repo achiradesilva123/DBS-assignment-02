@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa16a6f6-6a95-45b2-a319-d2c40b46c0e2" name="Changes" comment="created the client get request class &#10;&#10;Testing purpose : ( check the AggregationServer works and read the inputs)">
+    <list default="true" id="fa16a6f6-6a95-45b2-a319-d2c40b46c0e2" name="Changes" comment="changed the data fetching part , update the AggregationServer according to it and , debugged the code and change process of reading data and write part fetching when hit the put request.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.assignment2/client/GETClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.assignment2/client/GETClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.assignment2/client/LamportClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.assignment2/client/LamportClock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.assignment2/server/AggregationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.assignment2/server/AggregationServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,28 +36,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GETClient">
+  <component name="RunManager" selected="Application.ContentServer">
     <configuration name="AggregationServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.assignment2.server.AggregationServer" />
       <module name="WeatherAggregationSystem" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.assignment2.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContentServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.assignment2.client.ContentServer" />
+      <module name="WeatherAggregationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignment2.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ContentServer" />
         <item itemvalue="Application.GETClient" />
         <item itemvalue="Application.AggregationServer" />
       </list>
@@ -96,7 +107,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726730487385</updated>
-      <workItem from="1726730490231" duration="12884000" />
+      <workItem from="1726730490231" duration="23347000" />
+      <workItem from="1727835024100" duration="1390000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit :  Created client server folder architecture">
       <created>1726732558942</created>
@@ -126,7 +138,42 @@
       <option name="project" value="LOCAL" />
       <updated>1726749559139</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="implemented get and put handle requests and added increment behaviour to LamportClock.">
+      <created>1726888092840</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726888092840</updated>
+    </task>
+    <task id="LOCAL-00006" summary="updated GETClient to hit the rest controller apis">
+      <created>1726888146773</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1726888146773</updated>
+    </task>
+    <task id="LOCAL-00007" summary="created a class to hit put request (ContentServer,java)">
+      <created>1726889317775</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726889317775</updated>
+    </task>
+    <task id="LOCAL-00008" summary="created put function implementation">
+      <created>1726897963024</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1726897963024</updated>
+    </task>
+    <task id="LOCAL-00009" summary="changed the data fetching part , update the AggregationServer according to it and , debugged the code and change process of reading data and write part fetching when hit the put request.">
+      <created>1726906602803</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1726906602803</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +195,11 @@
     <MESSAGE value="created LamportClock entity and Controller for handle API request(AggregationServer)" />
     <MESSAGE value="built a structure for AggregationServer to handle client requests simultaneously" />
     <MESSAGE value="created the client get request class &#10;&#10;Testing purpose : ( check the AggregationServer works and read the inputs)" />
-    <option name="LAST_COMMIT_MESSAGE" value="created the client get request class &#10;&#10;Testing purpose : ( check the AggregationServer works and read the inputs)" />
+    <MESSAGE value="implemented get and put handle requests and added increment behaviour to LamportClock." />
+    <MESSAGE value="updated GETClient to hit the rest controller apis" />
+    <MESSAGE value="created a class to hit put request (ContentServer,java)" />
+    <MESSAGE value="created put function implementation" />
+    <MESSAGE value="changed the data fetching part , update the AggregationServer according to it and , debugged the code and change process of reading data and write part fetching when hit the put request." />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the data fetching part , update the AggregationServer according to it and , debugged the code and change process of reading data and write part fetching when hit the put request." />
   </component>
 </project>

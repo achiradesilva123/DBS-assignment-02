@@ -7,7 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class AggregationServer {
-    private static final int DEFAULT_PORT = 8888;
+    private static final int DEFAULT_PORT = 4567;
 
     private static LamportClock lamportClock = new LamportClock(0);
 

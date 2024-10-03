@@ -10,7 +10,7 @@ public class GETClient {
 
     public static void main(String[] args) {
         String server = "localhost";
-        int port = 8888;
+        int port = 4567;
 
         try (Socket socket = new Socket(server, port);
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
