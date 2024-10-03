@@ -1,4 +1,6 @@
-package server;
+//package server;
+
+import client.LamportClock;
 
 import java.io.*;
 import java.net.ServerSocket;
