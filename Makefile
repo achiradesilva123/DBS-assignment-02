@@ -9,7 +9,7 @@ SRC_DIR = src
 BIN_DIR = build
 
 # Java source files
-SOURCES = $(wildcard $(SRC_DIR)/*.java $(SRC_DIR)/*.java)
+SOURCES = $(wildcard $(SRC_DIR)/server/*.java $(SRC_DIR)/client/*.java)
 
 # Java class files
 CLASSES = $(patsubst $(SRC_DIR)/%.java,$(BIN_DIR)/%.class,$(SOURCES))
@@ -23,11 +23,11 @@ $(BIN_DIR)/%.class: $(SRC_DIR)/%.java
 
 # Run the server
 run-server:
-	$(JAVA) -cp $(BIN_DIR) AggregationServer
+	$(JAVA) -cp $(BIN_DIR) server.AggregationServer
 
 # Run the client
 run-client:
-	$(JAVA) -cp $(BIN_DIR) GETClient  # Replace YourClientClassName with the actual class name
+	$(JAVA) -cp $(BIN_DIR) client.GETClient
 
 
 
