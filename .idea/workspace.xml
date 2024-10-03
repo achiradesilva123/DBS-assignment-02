@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa16a6f6-6a95-45b2-a319-d2c40b46c0e2" name="Changes" comment="changed the data fetching part , update the AggregationServer according to it and , debugged the code and change process of reading data and write part fetching when hit the put request.">
+    <list default="true" id="fa16a6f6-6a95-45b2-a319-d2c40b46c0e2" name="Changes" comment="changed server port to 4567">
+      <change afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,6 +110,7 @@
       <updated>1726730487385</updated>
       <workItem from="1726730490231" duration="23347000" />
       <workItem from="1727835024100" duration="1390000" />
+      <workItem from="1727943678590" duration="931000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit :  Created client server folder architecture">
       <created>1726732558942</created>
@@ -173,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726906602803</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changed server port to 4567">
+      <created>1727943854006</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1727943854007</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +209,7 @@
     <MESSAGE value="created a class to hit put request (ContentServer,java)" />
     <MESSAGE value="created put function implementation" />
     <MESSAGE value="changed the data fetching part , update the AggregationServer according to it and , debugged the code and change process of reading data and write part fetching when hit the put request." />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the data fetching part , update the AggregationServer according to it and , debugged the code and change process of reading data and write part fetching when hit the put request." />
+    <MESSAGE value="changed server port to 4567" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed server port to 4567" />
   </component>
 </project>
