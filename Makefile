@@ -9,7 +9,7 @@ SRC_DIR = src
 BIN_DIR = build
 
 # Java source files
-SOURCES = $(wildcard $(SRC_DIR)/server/*.java $(SRC_DIR)/client/*.java)
+SOURCES = $(wildcard $(SRC_DIR)/*.java $(SRC_DIR)/*.java)
 
 # Java class files
 CLASSES = $(patsubst $(SRC_DIR)/%.java,$(BIN_DIR)/%.class,$(SOURCES))
