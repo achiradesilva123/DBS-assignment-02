@@ -23,11 +23,11 @@ $(BIN_DIR)/%.class: $(SRC_DIR)/%.java
 
 # Run the server
 run-server:
-	$(JAVA) -cp $(BIN_DIR) AggregationServer
+	$(JAVA) -cp $(SRC_DIR) AggregationServer
 
 # Run the client
 run-client:
-	$(JAVA) -cp $(BIN_DIR) GETClient
+	$(JAVA) -cp $(SRC_DIR) GETClient
 
 # Clean up the build
 clean:
