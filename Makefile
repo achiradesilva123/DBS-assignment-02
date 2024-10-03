@@ -23,7 +23,13 @@ $(BIN_DIR)/%.class: $(SRC_DIR)/%.java
 
 # Run the server
 run-server:
-	$(JAVA) -cp $(BIN_DIR) server.AggregationServer
+	$(JAVA) -cp $(BIN_DIR) AggregationServer
+
+# Run the client
+run-client:
+	$(JAVA) -cp $(BIN_DIR) GETClient  # Replace YourClientClassName with the actual class name
+
+
 
 # Clean up the build
 clean:
