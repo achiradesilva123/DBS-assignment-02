@@ -1,21 +1,34 @@
+# Makefile for building and running the weather aggregation system
+
+# Specify the Java compiler
 JAVAC = javac
-SRC = src
-BIN = build
-SERVER = server
-CLIENT = client
+JAVA = java
 
-SOURCES = $(shell find $(SRC) -name "*.java")
-CLASSES = $(SOURCES:$(SRC)/%.java=$(BIN)/%.class)
+# Directories
+SRC_DIR = src
+BIN_DIR = build
 
-all: $(BIN)/server/AggregationServer.class $(BIN)/client/GETClient.class
+# Java source files
+SOURCES = $(wildcard $(SRC_DIR)/server/*.java $(SRC_DIR)/client/*.java)
 
-$(BIN)/server/%.class: $(SRC)/server/%.java
-	mkdir -p $(BIN)/server
-	$(JAVAC) -d $(BIN) $(SRC)/server/$*.java
+# Java class files
+CLASSES = $(patsubst $(SRC_DIR)/%.java,$(BIN_DIR)/%.class,$(SOURCES))
 
-$(BIN)/client/%.class: $(SRC)/client/%.java
-	mkdir -p $(BIN)/client
-	$(JAVAC) -d $(BIN) $(SRC)/client/$*.java
+# Default target: Compile the Java sources
+all: $(CLASSES)
 
+$(BIN_DIR)/%.class: $(SRC_DIR)/%.java
+	@mkdir -p $(dir $@)
+	$(JAVAC) -d $(BIN_DIR) $(SRC_DIR)/$*.java
+
+# Run the aggregation server
+run-server:
+	$(JAVA) -cp $(BIN_DIR) server.AggregationServer
+
+# Run the client
+run-client:
+	$(JAVA) -cp $(BIN_DIR) client.GETClient
+
+# Clean up the build
 clean:
-	rm -rf $(BIN)/*
+	rm -rf $(BIN_DIR)/*
