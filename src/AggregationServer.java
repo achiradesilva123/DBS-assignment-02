@@ -31,11 +31,17 @@ public class AggregationServer {
 
         @Override
         public void run() {
-          try {
-              clientServiceHandler(clientSocket);
-          }catch (Exception e){
-              e.printStackTrace();
-          }
+            try {
+                clientServiceHandler(clientSocket);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    clientSocket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
